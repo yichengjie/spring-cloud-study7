@@ -2,9 +2,12 @@ package com.yicj.hello.handler;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import java.util.List;
 
 /**
  * @program: spring-cloud-study7
@@ -17,13 +20,13 @@ public class HelloHandler {
 
     public Mono<ServerResponse> hello(ServerRequest request){
         return ServerResponse.ok()
-                .contentType(MediaType.TEXT_PLAIN)
-                .body("hello", String.class) ;
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(Flux.just("hello", "world", "test"), List.class) ;
     }
 
     public Mono<ServerResponse> world(ServerRequest request){
         return ServerResponse.ok()
                 .contentType(MediaType.TEXT_PLAIN)
-                .body("world", String.class) ;
+                .body(BodyInserters.fromValue("world")) ;
     }
 }

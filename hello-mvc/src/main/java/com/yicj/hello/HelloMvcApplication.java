@@ -1,7 +1,8 @@
 package com.yicj.hello;
 
-import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
  * @program: spring-cloud-study7
@@ -13,6 +14,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HelloMvcApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HelloMvcApplication.class, args) ;
+        new SpringApplicationBuilder(HelloMvcApplication.class)
+                .main(HelloMvcApplication.class)
+                .web(WebApplicationType.REACTIVE)
+                .run(args) ;
     }
 }
