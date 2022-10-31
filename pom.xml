@@ -11,6 +11,7 @@
     <modules>
 
         <module>hello-mvc</module>
+        <module>hello-gateway</module>
     </modules>
 
     <parent>
