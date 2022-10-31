@@ -1,5 +1,6 @@
 package com.yicj.hello.config;
 
+import com.yicj.hello.filter.AuthFilter;
 import com.yicj.hello.handler.HelloHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -18,9 +19,14 @@ public class RouteConfig {
     @Autowired
     private HelloHandler handler ;
 
+    @Autowired
+    private AuthFilter authFilter ;
+
     @Bean
     public RouterFunction<ServerResponse> helloRouter(){
-        return RouterFunctions.route(RequestPredicates.GET("/hello/hello"), handler::hello)
-                .andRoute(RequestPredicates.GET("/hello/world"), handler::world);
+        return RouterFunctions
+                .route(RequestPredicates.GET("/hello/hello"), handler::hello)
+                .andRoute(RequestPredicates.GET("/hello/world"), handler::world)
+                .filter(authFilter);
     }
 }
