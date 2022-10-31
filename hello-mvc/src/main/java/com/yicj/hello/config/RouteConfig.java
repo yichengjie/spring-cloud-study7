@@ -27,6 +27,7 @@ public class RouteConfig {
         return RouterFunctions
                 .route(RequestPredicates.GET("/hello/hello"), handler::hello)
                 .andRoute(RequestPredicates.GET("/hello/world"), handler::world)
+                .andRoute(RequestPredicates.GET("/exception"), handler::exception)
                 .filter(authFilter);
     }
 }

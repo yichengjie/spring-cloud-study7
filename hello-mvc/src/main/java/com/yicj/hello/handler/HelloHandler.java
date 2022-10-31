@@ -29,4 +29,15 @@ public class HelloHandler {
                 .contentType(MediaType.TEXT_PLAIN)
                 .body(BodyInserters.fromValue("world")) ;
     }
+
+    public Mono<ServerResponse> exception(ServerRequest request){
+        return ServerResponse.ok()
+                .contentType(MediaType.TEXT_PLAIN)
+                .body(this.obtainException(), String.class) ;
+    }
+
+    private Mono<String> obtainException(){
+        int i = 1/0 ;
+        return Mono.just("exception") ;
+    }
 }

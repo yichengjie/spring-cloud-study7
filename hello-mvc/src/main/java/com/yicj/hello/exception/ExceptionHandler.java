@@ -1,5 +1,6 @@
 package com.yicj.hello.exception;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpStatus;
@@ -10,12 +11,13 @@ import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebExceptionHandler;
 import reactor.core.publisher.Mono;
 
-
+@Slf4j
 @Component
 @Order(-99)
 public class ExceptionHandler implements WebExceptionHandler {
     @Override
     public Mono<Void> handle(ServerWebExchange serverWebExchange, Throwable throwable) {
+        log.info("========= global exception ... =========");
         ServerHttpResponse response = serverWebExchange.getResponse();
         response.setStatusCode(HttpStatus.BAD_REQUEST);
         response.getHeaders().setContentType(MediaType.TEXT_PLAIN);
