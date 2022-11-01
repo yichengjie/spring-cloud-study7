@@ -12,7 +12,7 @@ import org.springframework.web.server.WebExceptionHandler;
 import reactor.core.publisher.Mono;
 
 @Slf4j
-@Component
+//@Component
 @Order(-99)
 public class ExceptionHandler implements WebExceptionHandler {
     @Override
