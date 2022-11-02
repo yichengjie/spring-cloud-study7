@@ -14,7 +14,7 @@ spring:
     gateway:
       enabled: true
       routes:
-        - id: query_route
+        - id: hello
           uri: https://www.baidu.com
           predicates:
-            - Query=green
+            - Path=/hello/**
