@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8040
 management:
   endpoint:
     web:
@@ -15,6 +15,6 @@ spring:
       enabled: true
       routes:
         - id: hello
-          uri: https://www.baidu.com
+          uri: http://localhost:8080/
           predicates:
             - Path=/hello/**
