@@ -21,27 +21,30 @@ import java.util.List;
 public class HelloHandler {
 
     public Mono<ServerResponse> hello(ServerRequest request){
-        ServerRequest.Headers headers = request.headers() ;
-
-        String token = request.headers().firstHeader("x-token");
-        log.info("===> token : {}", token);
-
+        List<String> tokenList = request.headers().header("token");
+        List<String> extTokenList = request.headers().header("x-token");
+        log.info("===> token : {}", tokenList);
+        log.info("===> extTokenList : {}", extTokenList);
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(Flux.just("hello", "world", "test"), List.class) ;
     }
 
     public Mono<ServerResponse> world(ServerRequest request){
-        String token = request.headers().firstHeader("x-token");
-        log.info("===> token : {}", token);
+        List<String> tokenList = request.headers().header("token");
+        List<String> extTokenList = request.headers().header("x-token");
+        log.info("===> token : {}", tokenList);
+        log.info("===> extTokenList : {}", extTokenList);
         return ServerResponse.ok()
                 .contentType(MediaType.TEXT_PLAIN)
                 .body(BodyInserters.fromValue("world")) ;
     }
 
     public Mono<ServerResponse> exception(ServerRequest request){
-        String token = request.headers().firstHeader("x-token");
+        String token = request.headers().firstHeader("token");
+        String xtoken = request.headers().firstHeader("x-token");
         log.info("===> token : {}", token);
+        log.info("===> xtoken : {}", xtoken);
         return ServerResponse.ok()
                 .contentType(MediaType.TEXT_PLAIN)
                 .body(this.obtainException(), String.class) ;

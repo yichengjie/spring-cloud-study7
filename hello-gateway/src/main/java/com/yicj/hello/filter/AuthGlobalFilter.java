@@ -29,10 +29,11 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
         ServerHttpRequest newRequest = exchange.getRequest()
                 .mutate()
                 .header("x-token", token)
+                .header("token", "789")
                 .build();
-        ServerWebExchange newExchange = exchange.mutate()
-                .request(newRequest).build();
-        return chain.filter(newExchange);
+        //ServerWebExchange newExchange = exchange.mutate()
+        //        .request(newRequest).build();
+        return chain.filter(exchange);
     }
 
     @Override

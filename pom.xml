@@ -9,8 +9,8 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
-
-        <module>hello-mvc</module>
+        <module>web-mvc</module>
+		<module>web-flux</module>
         <module>hello-gateway</module>
     </modules>
 
