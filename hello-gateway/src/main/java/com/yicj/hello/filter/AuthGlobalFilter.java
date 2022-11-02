@@ -31,9 +31,9 @@ public class AuthGlobalFilter implements GlobalFilter, Ordered {
                 .header("x-token", token)
                 .header("token", "789")
                 .build();
-        //ServerWebExchange newExchange = exchange.mutate()
-        //        .request(newRequest).build();
-        return chain.filter(exchange);
+        ServerWebExchange newExchange = exchange.mutate()
+                .request(newRequest).build();
+        return chain.filter(newExchange);
     }
 
     @Override

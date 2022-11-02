@@ -1,6 +1,7 @@
 package com.yicj.hello.handler;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserters;
@@ -21,10 +22,8 @@ import java.util.List;
 public class HelloHandler {
 
     public Mono<ServerResponse> hello(ServerRequest request){
-        List<String> tokenList = request.headers().header("token");
-        List<String> extTokenList = request.headers().header("x-token");
-        log.info("===> token : {}", tokenList);
-        log.info("===> extTokenList : {}", extTokenList);
+        HttpHeaders headers = request.headers().asHttpHeaders();
+        headers.forEach((key, value) -> log.info("key : {}", value));
         return ServerResponse.ok()
                 .contentType(MediaType.APPLICATION_JSON)
                 .body(Flux.just("hello", "world", "test"), List.class) ;
