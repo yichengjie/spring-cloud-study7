@@ -17,4 +17,6 @@ spring:
         - id: hello
           uri: http://localhost:8080/
           predicates:
-            - Path=/hello/**
+            - Path=/hellomvc/**
+          filters:
+            - StripPrefix=1
