@@ -3,6 +3,7 @@ package com.yicj.hello.config;
 import com.yicj.hello.filter.CustomOrderLogGlobalFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
+import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

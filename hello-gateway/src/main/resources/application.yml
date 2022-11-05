@@ -20,7 +20,10 @@ spring:
             - Path=/hellomvc/**
           filters:
             - StripPrefix=1
-        - id: login
+        - id: register
           uri: https://www.baidu.com
           predicates:
-            - Path=/login
+            - Path=/register
+          filters:
+            - StripPrefix=1
+
