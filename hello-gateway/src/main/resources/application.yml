@@ -20,3 +20,7 @@ spring:
             - Path=/hellomvc/**
           filters:
             - StripPrefix=1
+        - id: login
+          uri: https://www.baidu.com
+          predicates:
+            - Path=/login
