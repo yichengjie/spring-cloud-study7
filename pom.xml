@@ -12,6 +12,7 @@
         <module>web-mvc</module>
 		<module>web-flux</module>
         <module>hello-gateway</module>
+        <module>web-mvc-config</module>
     </modules>
 
     <parent>
