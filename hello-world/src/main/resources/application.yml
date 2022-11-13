@@ -1,0 +1,9 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: hello-world
+
+feign:
+  hystrix:
+    enabled: true

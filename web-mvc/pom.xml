@@ -17,9 +17,11 @@
     </properties>
 
     <dependencies>
+
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>com.yicj.study</groupId>
+            <artifactId>web-mvc-config</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>
@@ -42,6 +44,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>

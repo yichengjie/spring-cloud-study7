@@ -13,6 +13,7 @@
 		<module>web-flux</module>
         <module>hello-gateway</module>
         <module>web-mvc-config</module>
+        <module>hello-world</module>
     </modules>
 
     <parent>

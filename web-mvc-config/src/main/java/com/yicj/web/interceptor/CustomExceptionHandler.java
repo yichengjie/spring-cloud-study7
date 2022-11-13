@@ -18,7 +18,8 @@ public class CustomExceptionHandler{
     @ExceptionHandler(value = AppException.class)
     public RestResponse<?> handlerException(AppException e, HttpServletResponse response){
         log.error("自定义业务异常： {}" , e.getMessage(), e);
-        response.setStatus(HttpStatus.BAD_REQUEST.value());
+        //response.setStatus(HttpStatus.BAD_REQUEST.value());
+        response.setStatus(600);
         return RestResponse.fail(e.getCode(), e.getMessage()) ;
     }
 }
