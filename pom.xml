@@ -60,7 +60,8 @@
                 <version>1.18.18</version>
             </dependency>
 
-            <dependency>
+
+           <!-- <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
@@ -123,7 +124,7 @@
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>swagger-bootstrap-ui</artifactId>
                 <version>1.9.6</version>
-            </dependency>
+            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
