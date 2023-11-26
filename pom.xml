@@ -10,14 +10,16 @@
     <version>1.0.0</version>
     <modules>
         <module>web-mvc</module>
-		<module>web-flux</module>
-        <module>hello-gateway</module>
+		<!--<module>web-flux</module>
+        <module>hello-gateway</module>-->
+        <module>hello-openfeign</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.9.RELEASE</version>
+       <!-- <version>2.3.9.RELEASE</version>-->
+        <version>2.1.5.RELEASE</version>
     </parent>
 
     <properties>
@@ -25,9 +27,11 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <spring-boot.version>2.3.9.RELEASE</spring-boot.version>
-        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
-        <swagger-starter.version>1.9.0.RELEASE</swagger-starter.version>
+        <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
+        <!--<spring-cloud.version>Hoxton.SR9</spring-cloud.version>-->
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+
+        <!--<swagger-starter.version>1.9.0.RELEASE</swagger-starter.version>
         <mybatis-plus.version>3.4.3.1</mybatis-plus.version>
         <fastjson.version>1.2.58</fastjson.version>
         <jjwt.version>0.9.0</jjwt.version>
@@ -38,7 +42,7 @@
         <okhttp.version>3.14.2</okhttp.version>
         <mysql.jdbc.versoin>8.0.25</mysql.jdbc.versoin>
         <guava.version>20.0</guava.version>
-        <swagger.version>2.9.2</swagger.version>
+        <swagger.version>2.9.2</swagger.version>-->
     </properties>
 
     <dependencyManagement>
@@ -52,6 +56,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.18</version>
+            </dependency>
+
+            <!--<dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
@@ -98,7 +108,7 @@
                 <artifactId>lombok</artifactId>
                 <version>1.18.18</version>
             </dependency>
-            <!-- javax.annotation.Generated 类找不到错误-->
+            &lt;!&ndash; javax.annotation.Generated 类找不到错误&ndash;&gt;
             <dependency>
                 <groupId>javax.annotation</groupId>
                 <artifactId>javax.annotation-api</artifactId>
@@ -115,7 +125,7 @@
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>swagger-bootstrap-ui</artifactId>
                 <version>1.9.6</version>
-            </dependency>
+            </dependency>-->
         </dependencies>
     </dependencyManagement>
 
@@ -150,7 +160,7 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-
+    <!--
     <build>
         <pluginManagement>
             <plugins>
@@ -161,6 +171,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-    </build>
+    </build>-->
 
 </project>

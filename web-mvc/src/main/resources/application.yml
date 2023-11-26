@@ -1,0 +1,8 @@
+server:
+  port: 8081
+  compression:
+    enabled: true
+    min-response-size: 100
+spring:
+  application:
+    name: hello-web-mvc
