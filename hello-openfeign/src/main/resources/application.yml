@@ -1,2 +1,46 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
 server:
   port: 8083
+  tomcat:
+    max-connections: 2000
+    max-threads: 1024
+    min-spare-threads: 64
+    accept-count: 2000
+
+feign:
+  httpclient:
+    enabled: true
+    max-connections: 5000
+    max-connections-per-route: 1000
+###################################################
+hystrix:
+  threadpool:
+    default:
+      coreSize: 1000 #缺省为10
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+          strategy: THREAD
+
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
+  MaxTotalHttpConnections: 5000
+  MaxConnectionsPerHost: 5000
+logging:
+  level:
+    root: info
+    com.yicj.study.feign: debug

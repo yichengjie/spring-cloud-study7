@@ -20,4 +20,7 @@ public interface HelloFeignClient {
 
     @GetMapping("/hello2/listAllUser")
     RestResponse<List<UserVO>> listAllUser() ;
+
+    @GetMapping("/hello2/listAllUser")
+    String listAllUserString() ;
 }

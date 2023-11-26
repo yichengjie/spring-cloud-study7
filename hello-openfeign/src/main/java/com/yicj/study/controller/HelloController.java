@@ -32,4 +32,12 @@ public class HelloController {
         return list ;
     }
 
+
+    @GetMapping("/hello/listAllUserString")
+    public String listAllUserString(){
+        String retValue = helloFeignClient.listAllUserString();
+//        log.info("list : {}", retValue);
+        return retValue ;
+    }
+
 }

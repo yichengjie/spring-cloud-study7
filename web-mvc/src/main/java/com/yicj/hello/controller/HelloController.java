@@ -30,7 +30,7 @@ public class HelloController {
 
     @GetMapping("/listAllUser")
     public RestResponse<List<UserVO>> listAllUser(){
-        List<UserVO> retList = IntStream.range(1, 1000)
+        List<UserVO> retList = IntStream.range(1, 100000)
                 .mapToObj(item -> {
                     UserVO vo = new UserVO();
                     vo.setId(UUID.randomUUID().toString());
