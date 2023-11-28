@@ -20,26 +20,16 @@ feign:
     enabled: true
     max-connections: 5000
     max-connections-per-route: 1000
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 100
+    response:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-response-size: 100
 ###################################################
-hystrix:
-  threadpool:
-    default:
-      coreSize: 1000 #缺省为10
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000
-          strategy: THREAD
-
-ribbon:
-  ReadTimeout: 60000
-  ConnectTimeout: 60000
-  MaxAutoRetries: 1
-  MaxAutoRetriesNextServer: 2
-  MaxTotalHttpConnections: 5000
-  MaxConnectionsPerHost: 5000
 logging:
   level:
     root: info
