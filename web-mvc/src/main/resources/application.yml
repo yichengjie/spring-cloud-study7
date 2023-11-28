@@ -1,7 +1,7 @@
 server:
   port: 8081
   compression:
-    enabled: false
+    enabled: true
     min-response-size: 800
   tomcat:
     max-connections: 2000

@@ -15,7 +15,7 @@ import java.util.List;
  * @author yicj
  * @since 2023年11月26日 19:19
  */
-@FeignClient(name = "hello-web-mvc", url = "http://192.168.1.214:8081")
+@FeignClient(name = "hello-web-mvc", url = "http://127.0.0.1:8081")
 public interface HelloFeignClient {
 
     @GetMapping("/hello2/listAllUser")
