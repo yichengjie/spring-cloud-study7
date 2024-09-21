@@ -5,10 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
- * @program: spring-cloud-study7
- * @description:
- * @author: yicj1
- * @create: 2022-10-31 10:06
+ * @author yicj1
+ * @create 2022-10-31 10:06
  **/
 @SpringBootApplication
 public class HelloMvcApplication {
